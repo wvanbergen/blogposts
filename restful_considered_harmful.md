@@ -26,7 +26,8 @@ A database UPDATE in this case is an implementation detail to make the data refl
 
 RESTful thinking for processes therefore causes more harm then it does good. The RESTful thinker may design both the payment of an order and the shipping of an order both as updates, using the HTTP PATCH method:
 
-```PATCH /orders/123 # with { order: { paid: true  } }
+```
+    PATCH /orders/123 # with { order: { paid: true  } }
     PATCH /orders/123 # with { order: { shipped: true } }
 ```
 
@@ -34,7 +35,8 @@ Isn't that a nice DRY design? Only one controller action is needed, just one cod
 
 But should your application in the first place be true to RESTful design principles, or true to the principles of the process it supports? I think the latter, so giving the different transactions different URIs is better:
 
-```POST /orders/123/pay
+```
+    POST /orders/123/pay
     POST /orders/123/ship
 ```
 
