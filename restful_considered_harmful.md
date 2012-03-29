@@ -14,7 +14,7 @@ But do the CRUD actions match nicely on the HTTP methods? DELETE is obvious, and
 
 ## Updates are not created equal
 
-In the relational world of the database, UPDATE is just an operator that is part of set theory. In the world of publishing hypermedia resources that is HTTP, PUT is just a way to replace a resource on a given URL; PATCH was added later to patch up an existing resource in an application defined way. 
+In the relational world of the database, UPDATE is just an operator that is part of set theory. In the world of publishing hypermedia resources that is HTTP, PUT is just a way to replace a resource on a given URL; PATCH was added later to patch up an existing resource in an application-specific way. 
 
 But was is an update in the web application world? It turns put that it is not so clear cut. Most web application are built to support processes: it is an [OLTP system](http://en.wikipedia.org/wiki/Online_transaction_processing). A clear example of an OLTP system supporting a process is an e-commerce application. In an OLTP system, there is two kinds of data: process-describing data (e.g., an order in the e-commerce example), and master data of the objects that play a role within that process (e.g. customer and product). 
 
