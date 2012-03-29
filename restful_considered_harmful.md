@@ -40,7 +40,7 @@ But should your application in the first place be true to RESTful design princip
     POST /orders/42/ship
 ```
 
-This is not only clearer, it also allows you to authorize and validate those transactions separately. Both transaction affect the data differently, and potentially the person that is allowed to administer the payment of the order may not be the same as the person shipping it.
+This is not only clearer, it also allows you to authorize and validate those transactions separately. Both transactions affect the data differently, and potentially the person that is allowed to administer the payment of the order may not be the same as the person shipping it.
 
 ## What about mass-assignment?
 
