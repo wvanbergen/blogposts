@@ -55,7 +55,7 @@ Finally, can we improve Rails to reflect these ideas and make it more secure? He
 - Do not generate an `update` action when running the resource generator. This way it won't be there if it doesn't need to be reducing the possibility of a security problem. 
 - Ship with a state machine implementation by default, and a generator for a state machine-backed process model. Be opinionated!
 
-These changes would make Rails point developers into the right direction when designing their application, resulting in better, more secure applications as a result.
+These changes would make Rails point developers into the right direction when designing their application, resulting in better, more secure applications.
 
 
 * * *
