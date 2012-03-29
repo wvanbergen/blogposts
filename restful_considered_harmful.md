@@ -24,7 +24,7 @@ A database UPDATE in this case is an implementation detail to make the data refl
 
 ## Transactional design in a RESTful world
 
-RESTful thinking for processes therefore causes more harm then it does good. The RESTful thinker may design both the payment of an order and the shipping of an order both as updates, using the HTTP PATCH method:
+RESTful thinking for processes therefore causes more harm than it does good. The RESTful thinker may design both the payment of an order and the shipping of an order both as updates, using the HTTP PATCH method:
 
 ```
     PATCH /orders/42 # with { order: { paid: true  } }
