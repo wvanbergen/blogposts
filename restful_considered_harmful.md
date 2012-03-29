@@ -61,5 +61,5 @@ These changes would make Rails point developers into the right direction when de
 * * *
 
 <a name="restful-note-1"></a>
-*[1]* You may even want to model changes to master data as transactions, to make your system fully auditable and to make it easy to return the a previous value, e.g. to roll back a malicious update to the `ssh_key` field in the `users` table.
+*[1]* You may even want to model changes to master data as transactions, to make your system fully auditable and to make it easy to return to a previous value, e.g. to roll back a malicious update to the `ssh_key` field in the `users` table.
 
