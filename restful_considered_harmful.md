@@ -48,7 +48,7 @@ When implementing a process, every possible transaction should have a correspond
 
 In turn, the controller should call this method on the model. Using `update_attributes` from your controller directly should be avoided: it is too easy to forget appropriate protection for mass-assignment, especially if  multiple transactions in the process update different fields of the model. This also sheds some light in the protecting from mass-assignment debate: protection is not so much part of the controller or the model, but should be part of the **transaction**.
 
-Again, using a [state machine](https://github.com/pluginaweek/state_machine) to model the process makes following this following these principles almost a given, making your code more secure and bug free.
+Again, using a [state machine](https://github.com/pluginaweek/state_machine) to model the process makes following this following these principles almost a given, making your code more secure and bug free. Moreover, it easily allows you to keep full history of the process, making it completely auditable.
 
 ## Improving Rails
 
