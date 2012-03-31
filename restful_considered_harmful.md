@@ -1,14 +1,14 @@
 # RESTful thinking considered harmful
 
-It has been interesting and at times amusing to watch the last couple of intense debates in the Rails community. Of particular interest to me are the two topics that relate to RESTful design that ended up on the Rails blog itself: [using the PATCH HTTP method for updates](http://weblog.rubyonrails.org/2012/2/25/edge-rails-patch-is-the-new-primary-http-method-for-updates/) and [protecting attribute mass-assignment in the controller vs. in the model](Strong parameters: Dealing with mass assignment in the controller instead of the model).
+It has been interesting and at times amusing to watch the last couple of intense debates in the Rails community. Of particular interest to me are the two topics that relate to RESTful design that ended up on the Rails blog itself: [using the PATCH HTTP method for updates](http://weblog.rubyonrails.org/2012/2/25/edge-rails-patch-is-the-new-primary-http-method-for-updates/) and [protecting attribute mass-assignment in the controller vs. in the model](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/).
 
 ## REST and CRUD
 
-These discussions are interesting because they our both about the update part of the CRUD model. PATCH deals with updates directly, and most problems with mass-assignment occur with updates, not with creation of resources. 
+These discussions are interesting because they are both about the update part of the CRUD model. PATCH deals with updates directly, and most problems with mass-assignment occur with updates, not with creation of resources. 
 
 In the Rails world, RESTful design and the CRUD interface are closely intertwined: the best illustration for this is that the resource generator generates a controller with all the CRUD actions in place (read is renamed to show, and delete is renamed to destroy). Also, there is the [DHH RailsConf '06 keynote](http://www.scribemedia.org/2006/07/09/dhh/) linking CRUD to RESTful design.
 
-Why do we link those two concepts? Certainly not because this link was included in the original [Robert Fleming dissertation on the RESTful paradigm](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). It is probably related to the fact that the CRUD actions match so nicely on the SQL statements in relational databases that most web applications are built on (SELECT, INSERT, UPDATE and DELETE) on the one hand, and on the HTTP methods that are used to access the web application on the other hand. So CRUD seems a logical link between the two.
+Why do we link those two concepts? Certainly not because this link was included in the original [Roy Fielding dissertation on the RESTful paradigm](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). It is probably related to the fact that the CRUD actions match so nicely on the SQL statements in relational databases that most web applications are built on (SELECT, INSERT, UPDATE and DELETE) on the one hand, and on the HTTP methods that are used to access the web application on the other hand. So CRUD seems a logical link between the two.
 
 But do the CRUD actions match nicely on the HTTP methods? DELETE is obvious, and the link between GET and read is also straightforward. Linking POST and create already takes a bit more imagination, but the link between PUT and update is not that clear at all. This is why PATCH was added to the HTTP spec and where the whole PUT/PATCH debate came from.
 
@@ -57,7 +57,7 @@ Finally, can we improve Rails to reflect these ideas and make it more secure? He
 - Do not generate an `update` action that relies on calling `update_attributes` when running the resource generator. This way it won't be there if it doesn't need to be reducing the possibility of a security problem. 
 - Ship with a state machine implementation by default, and a generator for a state machine-backed process model. Be opinionated!
 
-These changes would make Rails point developers into the right direction when designing their application, resulting in better, more secure applications.
+These changes would point Rails developers into the right direction when designing their application, resulting in better, more secure applications.
 
 
 * * *
