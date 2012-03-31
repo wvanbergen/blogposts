@@ -18,9 +18,10 @@ In the end, having a properly working application that doesn't lose data is more
 
 ## Improving the status quo
 
-In the end, what I want to achieve is educating developers, not changing the way Rails implements REST. Generators, screencasts and tutorials
+In the end, what I want to achieve is educating developers, not changing the way Rails implements REST. Rails conventions, generators, screencasts, and tutorials are all part of how we educate new Rails developers.
 
-- Rails could ship with a state machine implementation, and a generator to create a model based on it. Tutorials, screencasts, and documentation could focus on using it to design your application. This would lead to to better designed application with less bugs and security issues.
+- Rails should ship with a state machine implementation, and a generator to create a model based on it. 
+- Tutorials, screencasts, and documentation should focus on using it to design your application. This would lead to to better designed application with less bugs and security issues.
 - You can always wrap your state machine in a RESTful API if you wish. But this should always come as step 2.
 
 Hopefully this clarifies a bit better what I was trying to bring across.
